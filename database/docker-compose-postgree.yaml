@@ -1,0 +1,23 @@
+version: '3'
+
+services:
+
+  postgres:
+    image: postgres
+    container_name: postgres
+
+    environment:
+      POSTGRES_PASSWORD: secret
+
+    ports:
+      - 5432:5432
+
+    volumes:
+      - ./var/postgres:/var/lib/postgresql/data
+
+    networks:
+      - global-default
+
+networks:
+  global-default:
+    external: true

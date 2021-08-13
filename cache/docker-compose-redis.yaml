@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+
+  redis:
+    image: redis
+    container_name: redis-single
+
+    ports:
+      - 6379:6379
+
+    networks:
+      - global-default
+
+networks:
+  global-default:
+    external: true

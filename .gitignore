@@ -1,0 +1,10 @@
+.buildpath
+.settings/
+.project
+*.patch
+.vscode/
+.git/
+.env
+.DS_Store
+*.cache
+var/
