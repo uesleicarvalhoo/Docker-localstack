@@ -13,6 +13,9 @@ services:
       MONGO_INITDB_ROOT_USERNAME: root
       MONGO_INITDB_ROOT_PASSWORD: secret
 
+    volumes:
+      - mongodb-data:/data/db
+
     networks:
       - global-default
 
@@ -33,6 +36,10 @@ services:
 
     networks:
       - global-default
+
+volumes:
+  mongodb-data:
+    external: true
 
 networks:
   global-default:

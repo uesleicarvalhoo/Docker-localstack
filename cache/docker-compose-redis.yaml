@@ -12,6 +12,13 @@ services:
     networks:
       - global-default
 
+    volumes:
+      - redis-data:/data
+
+volumes:
+  redis-data:
+    external: true
+
 networks:
   global-default:
     external: true
