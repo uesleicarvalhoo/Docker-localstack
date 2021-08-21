@@ -6,15 +6,23 @@ services:
     container_name: aws-localstack
     image: localstack/localstack
 
-    networks:
-      - global-default
-
     ports:
-      - 4566:4566
+      - 4566-4572:4566-4572
 
     environment:
       - EDGE_PORT=4566
       - SERVICES=sqs,s3
+      - DATA_DIR=/tmp/localstack/data
+
+    networks:
+      - global-default
+
+    volumes:
+      - localstack-s3:/tmp/localstack
+
+volumes:
+  localstack-s3:
+    external: true
 
 networks:
   global-default:

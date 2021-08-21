@@ -88,7 +88,7 @@ services:
 
 volumes:
   elasticsearch-data:
-    driver: local
+    external: true
 
 networks:
   global-default:

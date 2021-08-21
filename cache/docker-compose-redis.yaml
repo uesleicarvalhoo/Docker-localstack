@@ -4,7 +4,7 @@ services:
 
   redis:
     image: redis
-    container_name: redis-single
+    container_name: redis
 
     ports:
       - 6379:6379
@@ -14,6 +14,19 @@ services:
 
     volumes:
       - redis-data:/data
+
+  redisinsight:
+    container_name: redis-insight
+    image: redislabs/redisinsight:latest
+
+    ports:
+      - 8001:8001
+
+    networks:
+      - global-default
+
+    depends_on:
+      - redis
 
 volumes:
   redis-data:
