@@ -8,6 +8,8 @@ services:
 
     environment:
       POSTGRES_PASSWORD: secret
+      TZ: 'GMT-3'
+      PGTZ: 'GMT-3'
 
     ports:
       - 5432:5432

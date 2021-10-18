@@ -2,7 +2,6 @@ run_aws:
 	@docker-compose -f aws/docker-compose.yaml up -d
 
 run_cache:
-	@docker-compose -f cache/docker-compose-insight.yaml up -d
 	@docker-compose -f cache/docker-compose-redis.yaml up -d
 
 run_database:
