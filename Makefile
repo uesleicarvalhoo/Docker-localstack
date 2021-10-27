@@ -12,6 +12,9 @@ run_database:
 run_monitoring:
 	@docker-compose -f monitoring/docker-compose.yaml up -d
 
+run_broker:
+	@docker-compose -f broker/docker-compose.yaml up -d
+
 run_all:
 	@make run_aws
 	@make run_cache
